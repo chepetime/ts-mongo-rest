@@ -37,8 +37,14 @@ module.exports = {
 			files: ["**/*.ts"],
 			parser: "@typescript-eslint/parser",
 			rules: {
-				// These off-by-default rules work well for this repo and we like them on.
+				"@typescript-eslint/no-misused-promises": [
+					"error",
+					{
+						checksVoidReturn: false,
+					},
+				],
 
+				// These off-by-default rules work well for this repo and we like them on.
 				"jsdoc/informative-docs": "error",
 
 				// These on-by-default rules don't work well for this repo and we like them off.
@@ -132,6 +138,12 @@ module.exports = {
 	],
 	root: true,
 	rules: {
+		"@typescript-eslint/no-misused-promises": [
+			"error",
+			{
+				checksVoidReturn: false,
+			},
+		],
 		// These off/less-strict-by-default rules work well for this repo and we like them on.
 		"@typescript-eslint/no-unused-vars": ["error", { caughtErrors: "all" }],
 		"no-only-tests/no-only-tests": "error",
